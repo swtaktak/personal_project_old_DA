@@ -21,8 +21,11 @@ cur.execute("select * from employees") #sql 쿼리 작성
 for c in cur:
 	print(c)
     
-cur.close()
-conn.close()
+
 
 # remark : df = pd.read_sql 구문으로 불러옴
 df = pd.read_sql("select * from employees where salary > 15000", con = conn)
+
+# 마지막에 종료할 때 넣는 문장.
+cur.close()
+conn.close()
