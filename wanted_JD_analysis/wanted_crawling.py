@@ -13,7 +13,7 @@ job_df = pd.DataFrame(columns = ['company_name', 'descriptions','date',
                                  'industry', 'category', 'title'])
 cur_row = 0
 i = 198001
-while cur_row < 2500:
+while cur_row < 5000:
     i -= 1
     link = 'https://www.wanted.co.kr/wd/' + str(i)
     resp = requests.get(link)
@@ -36,7 +36,7 @@ while cur_row < 2500:
                                  industry, category, title]
         job_df.loc[cur_row]=cur_list
         cur_row += 1
-        print('%s %s input' %(company_name, category))
+        #print('%s %s input' %(company_name, category))
     except:
         pass
 
